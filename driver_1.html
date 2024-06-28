@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bubble Laundry - Cleanliness is our priority</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style_2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</head>
+    
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="index.html" class="navbar-brand">
+                    <h1 class="m-0 text-secondary"><span class="text-primary">BUBBLE</span> LAUNDRY</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="#" class="nav-item nav-link active">Pickup & Delivery</a>
+                        <a href="driver_2.html" class="nav-item nav-link">Order</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="page-header container-fluid bg-secondary pt-2 pt-lg-5 pb-2 mb-5">
+        <div class="container py-5">
+            <div class="row align-items-center py-4">
+                <div class="col-md-6 text-center text-md-left">
+                    <h1 class="mb-4 mb-md-0 text-white">Hi, Driver!</h1>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="btn text-white" href="index.html">Home</a>
+                        <i class="fas fa-angle-right text-white"></i>
+                        <a class="btn text-white disabled" href="">Driver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+    
+
+    <!-- Container Start -->
+    <div class="container">
+        <section id="maps-section">
+            <h2>Maps</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15828.616119738366!2d112.73644455!3d-7.336592950000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb47c989e829%3A0x24bc8026e219f8ac!2sSiwalankerto%2C%20Wonocolo%2C%20Surabaya%2C%20East%20Java!5e0!3m2!1sen!2sid!4v1717301444572!5m2!1sen!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+        <br><br>
+        <section id="photo-evidence-section">
+            <h2>Upload Photo Evidence</h2>
+            <input type="file" accept=".jpg, .png, .jpeg" id="photoEvidence" onchange="enableOrderCompletedButton()">
+        </section>
+        <br><br>
+        <section id="notification-section">
+            <h2>Notification</h2>
+            <div id="notification"></div>
+            <div class="button-container">
+                <button class="btn btn-light" onclick="openPopup('text')">Chat</button>
+                <button class="btn btn-light" onclick="openPopup('call')">Call</button>
+            </div>
+            <section id="order-completion-section">
+                <button type="button" class="btn btn-light" id="orderCompletedButton" onclick="showOrderCompletedToastr()" disabled>Order Completed</button>
+            </section>
+        </section>
+    </div>
+    <!-- Container End -->
+
+
+    <!-- Text Content Popup Start -->
+    <div id="textPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('textPopup')">&times;</span>
+            <img src="img/text.jpg" alt="Text Image" class="popup-image">
+        </div>
+    </div>
+    <!-- Text Content Popup End -->
+
+    <!-- Call Content Popup Start -->
+    <div id="callPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup('callPopup')">&times;</span>
+            <img src="img/call.jpg" alt="Call Image" class="popup-image" height="700px">
+        </div>
+    </div>
+    <!-- Call Content Popup End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primary text-white mt-5 pt-5 px-sm-3 px-md-5">
+        <div class="row pt-0">
+            <div class="col-lg-0 col-md-6 mb-5">
+                <a href=""><h1 class="text-secondary mb-3"><span class="text-white">BUBBLE</span> LAUNDRY</h1></a>
+                <h4 class="text-white">We Are Leading Laundry Provider In Surabaya</h4>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white mb-4">Contact Us!</h4>
+                <p><i class="fa fa-phone-alt mr-2"></i>+62 888 8888 8888</p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

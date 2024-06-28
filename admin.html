@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bubble Laundry - Cleanliness is our priority</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style_2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</head>
+    
+<body>   
+    <!-- Page Header Start -->
+    <div class="page-header container-fluid bg-secondary pt-2 pt-lg-5 pb-2 mb-5">
+        <div class="container py-5">
+            <div class="row align-items-center py-4">
+                <div class="col-md-6 text-center text-md-left">
+                    <h1 class="mb-4 mb-md-0 text-white">Hi, Admin!</h1>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="btn text-white" href="index.html">Home</a>
+                        <i class="fas fa-angle-right text-white"></i>
+                        <a class="btn text-white disabled" href="">Admin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header Start -->
+
+
+    <!-- Content Main Start -->
+    <main class="cd__main">
+        <div class="container pt-4 pb-4">
+            <div class="content-wrapper desktop-view">
+                <div class="form-container">
+                    <form action="" method="">
+                        <label>
+                            <span class="fullname">Customer name <span class="required">*</span></span>
+                            <input type="text" name="fullname">
+                        </label>
+                        <label>
+                            <span class="phoneNumber">Customer phone number <span class="required">*</span></span>
+                            <input type="text" name="phoneNumber">
+                        </label>
+                        <label class="washing-options-label">
+                            <span>Washing Options <span class="required">*</span></span>
+                            <div class="washing-options">
+                                <input type="radio" id="weightbased" name="washing" value="weightbased" onclick="showWeightBasedFormAdmin()" required>
+                                <label for="weightbased">Weight-Based</label>
+                                <input type="radio" id="peritem" name="washing" value="peritem" onclick="showPerItemFormAdmin()" required>
+                                <label for="peritem">Per-Item</label>
+                            </div>
+                        </label>
+                        <label id="weight-label-admin" class="hidden">
+                            <span>Weight <span class="required">*</span></span>
+                            <input type="text" id="weight-input-admin" name="houseadd" placeholder="Please weigh it first..." required>
+                        </label>
+                        <label id="peritem-label-admin" class="hidden">
+                            <span>Per-Item <span class="required">*</span></span>
+                            <select id="peritem-select-admin" name="selection">
+                                <option value="select">Select your item...</option>
+                                <option value="Alma mater jacket">Alma mater jacket</option>
+                                <option value="Dress">Dress</option>
+                                <option value="Bedcover">Bedcover</option>
+                                <option value="Jacket">Jacket</option>
+                                <option value="Shoes">Shoes</option>
+                            </select>
+                        </label>
+                        <label id="quantity-label-admin" class="hidden">
+                            <span>Quantity <span class="required">*</span></span>
+                            <input type="number" min="1" id="quantity-input-admin" name="houseadd" placeholder="Enter quantity..." required>
+                        </label>
+                        <button type="button" id="confirmButton-admin" class="btn btn-light" onclick="updateYorderAdmin()">Confirm Order</button>
+                    </form>
+                </div>
+                <div class="Yorder-admin hidden">
+                    <table>
+                        <tr>
+                            <th colspan="2">Your order</th>
+                        </tr>
+                        <tr class="align-left">
+                            <td id="customerNameRow"></td>
+                        </tr>
+                        <tr class="align-left">
+                            <td id="customerPhoneRow"></td>
+                        </tr>
+                        <tr class="align-left">
+                            <td id="detergentRow"></td>
+                            <td id="detergentPrice"></td>
+                        </tr>
+                        <tr class="align-left">
+                            <td id="weightRow"></td>
+                            <td id="weightPrice"></td>
+                        </tr>
+                        <tr class="align-left">
+                            <td id="quantityRow"></td>
+                            <td id="quantityPrice"></td>
+                        </tr>
+                        <tr class="align-left">
+                            <td id="durationRow"></td>
+                            <td id="durationPrice"></td>
+                        </tr>
+                        <tr class="align-left">
+                            <td>Subtotal</td>
+                            <td id="subtotalPrice"></td>
+                        </tr>
+                    </table>
+                    <br>
+                    <div>
+                        <label class="payment-label">Payment Method:</label>
+                        <div class="payment-options">
+                            <input type="radio" id="cash" name="payment" value="cash" onclick="togglePaymentOptions()">
+                            <label for="cash">Cash</label>
+                            <input type="radio" id="qris" name="payment" value="qris" onclick="togglePaymentOptions()">
+                            <label for="qris">QRIS</label>
+                        </div>
+                        <div id="qrisContainer" style="display: none;">
+                            <img id="qrisImg" src="/img/qris.jpg" alt="QRIS" width="200">
+                        </div>
+                    </div>
+                    <button type="button" id="payHereButton" class="btn btn-light" onclick="payHereButtonAdmin()">Pay here</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Content Main End -->
+      
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-primary text-white mt-5 pt-5 px-sm-3 px-md-5">
+        <div class="row pt-0">
+            <div class="col-lg-0 col-md-6 mb-5">
+                <a href="index.html"><h1 class="text-secondary mb-3"><span class="text-white">BUBBLE</span> LAUNDRY</h1></a>
+                <h4 class="text-white">We Are Leading Laundry Provider In Surabaya</h4>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white mb-4">Contact Us!</h4>
+                <p><i class="fa fa-phone-alt mr-2"></i>+62 888 8888 8888</p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
