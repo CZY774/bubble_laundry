@@ -1,5 +1,4 @@
 
-```markdown
 # Laundry Service Website
 
 This project is a comprehensive laundry service website developed based on a client's request. It includes functionalities for users, administrators, drivers, and self-service laundry customers. The project is built using HTML, CSS, and JavaScript, and it features a UML design to outline the structure and interactions within the system.
@@ -35,14 +34,14 @@ This project marks the first time I have worked on a website project independent
 To run this project locally, follow these steps:
 
 1. Clone the repository:
-   ```bash
+   bash
    git clone https://github.com/CZY774/bubble_laundry.git
-   ```
+
 
 2. Navigate to the project directory:
-   ```bash
+   bash
    cd bubble_laundry
-   ```
+   
 
 3. Open `index.html` in your preferred browser.
 
