@@ -3,6 +3,8 @@
 
 This project is a comprehensive laundry service website developed based on a client's request. It includes functionalities for users, administrators, drivers, and self-service laundry customers. The project is built using HTML, CSS, and JavaScript, and it features a UML design to outline the structure and interactions within the system.
 
+The website is developed using a template from [HTML Codex](https://htmlcodex.com/laundry-service-website-template/).
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
@@ -70,7 +72,7 @@ Use the following credentials to log in:
 - **Location:** Siwalankerto
 
 ## UML Diagram
-The project includes a detailed UML diagram to help understand the system architecture and interactions. The UML diagram is available in the `docs` folder of the repository.
+The project includes a detailed UML diagram to help understand the system architecture and interactions. The UML diagram is available in the `Laundry Project ADSI_rev3` file of the repository.
 
 ## Contributing
 Contributions are welcome! Please fork the repository and create a pull request with your changes. Ensure your code follows the project's coding guidelines.
